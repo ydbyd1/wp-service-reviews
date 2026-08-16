@@ -1,0 +1,280 @@
+/* Service Reviews Frontend Styles */
+
+.wsrp-ratings-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.wsrp-ratings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.wsrp-ratings-header h3 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.wsrp-average-rating {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.wsrp-stars {
+    font-size: 24px;
+    letter-spacing: 3px;
+}
+
+.wsrp-star {
+    color: #ddd;
+    transition: color 0.2s;
+}
+
+.wsrp-star.full {
+    color: #ffc107;
+}
+
+.wsrp-star.half {
+    color: #ffc107;
+    opacity: 0.5;
+}
+
+.wsrp-rating-text {
+    text-align: right;
+}
+
+.wsrp-avg-number {
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+.wsrp-rating-count {
+    display: block;
+    color: #999;
+    font-size: 14px;
+}
+
+.wsrp-ratings-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.wsrp-rating-item {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #ffc107;
+    transition: box-shadow 0.3s;
+}
+
+.wsrp-rating-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.wsrp-rating-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 15px;
+}
+
+.wsrp-customer-name {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+    flex: 1;
+}
+
+.wsrp-rating-stars {
+    font-size: 18px;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+.wsrp-rating-comment {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.wsrp-rating-service {
+    color: #999;
+    font-size: 12px;
+    margin: 10px 0 5px 0;
+}
+
+.wsrp-rating-date {
+    color: #999;
+    font-size: 11px;
+    margin: 0;
+}
+
+.wsrp-no-ratings {
+    text-align: center;
+    color: #999;
+    padding: 40px;
+}
+
+/* Rating Form Styles */
+
+.wsrp-form-container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.wsrp-form-container h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.wsrp-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.wsrp-form-group {
+    margin-bottom: 20px;
+}
+
+.wsrp-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.wsrp-form-group input[type="text"],
+.wsrp-form-group input[type="email"],
+.wsrp-form-group input[type="tel"],
+.wsrp-form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.wsrp-form-group input:focus,
+.wsrp-form-group textarea:focus {
+    outline: none;
+    border-color: #ffc107;
+    box-shadow: 0 0 5px rgba(255, 193, 7, 0.3);
+}
+
+.wsrp-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.wsrp-rating-input {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.wsrp-rating-input input[type="radio"] {
+    display: none;
+}
+
+.wsrp-rating-input label.star {
+    font-size: 32px;
+    cursor: pointer;
+    color: #ddd;
+    transition: color 0.2s, transform 0.2s;
+    margin: 0;
+}
+
+.wsrp-rating-input label.star:hover,
+.wsrp-rating-input label.star:hover ~ label.star {
+    color: #ffc107;
+    transform: scale(1.1);
+}
+
+.wsrp-rating-input input[type="radio"]:checked ~ label.star {
+    color: #ffc107;
+}
+
+.wsrp-form-submit {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.wsrp-btn-submit {
+    flex: 1;
+    padding: 12px 30px;
+    background: #ffc107;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.wsrp-btn-submit:hover {
+    background: #ffb300;
+}
+
+.wsrp-loading {
+    color: #666;
+    font-size: 14px;
+}
+
+.wsrp-form-message {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.wsrp-form-message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.wsrp-form-message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+@media (max-width: 768px) {
+    .wsrp-ratings-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .wsrp-form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .wsrp-ratings-list {
+        grid-template-columns: 1fr;
+    }
+}
