@@ -3,7 +3,7 @@
  * Plugin Name: Service Reviews & Ratings
  * Plugin URI: https://trturkey.net
  * Description: نظام تقييمات الخدمات المتقدم مع لوحة تحكم شاملة
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: TR Turkey
  * Author URI: https://trturkey.net
  * License: GPL-2.0-or-later
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
 
 define('WSRP_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WSRP_PLUGIN_URL', plugin_dir_url(__FILE__));
-define('WSRP_PLUGIN_VERSION', '1.0.0');
+define('WSRP_PLUGIN_VERSION', '1.0.1');
 
 // تفعيل الإضافة
 register_activation_hook(__FILE__, 'wsrp_activate_plugin');
@@ -34,6 +34,7 @@ require_once WSRP_PLUGIN_DIR . 'includes/class-rating-shortcode.php';
 if (is_admin()) {
     require_once WSRP_PLUGIN_DIR . 'admin/class-admin-menu.php';
     require_once WSRP_PLUGIN_DIR . 'admin/class-ratings-list.php';
+    require_once WSRP_PLUGIN_DIR . 'admin/class-settings.php';
 }
 
 // تحميل النماذج والأمام
@@ -48,6 +49,7 @@ function wsrp_init_plugin() {
     
     if (is_admin()) {
         new WSRP_Admin_Menu();
+        new WSRP_Settings();
     }
 }
 
@@ -67,6 +69,10 @@ function wsrp_enqueue_admin_scripts($hook) {
     if (strpos($hook, 'service-reviews') !== false) {
         wp_enqueue_style('wsrp-admin', WSRP_PLUGIN_URL . 'admin/css/admin.css', [], WSRP_PLUGIN_VERSION);
         wp_enqueue_script('wsrp-admin', WSRP_PLUGIN_URL . 'admin/js/admin.js', ['jquery'], WSRP_PLUGIN_VERSION, true);
+        
+        // تحميل ملفات الإعدادات
+        wp_enqueue_style('wsrp-settings', WSRP_PLUGIN_URL . 'admin/css/settings.css', [], WSRP_PLUGIN_VERSION);
+        wp_enqueue_script('wsrp-settings', WSRP_PLUGIN_URL . 'admin/js/settings.js', ['jquery'], WSRP_PLUGIN_VERSION, true);
     }
 }
 
